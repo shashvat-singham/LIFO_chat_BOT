@@ -1,0 +1,108 @@
+
+<div class="wrapper">
+
+
+<div class="msger" >
+
+  <header class="msger-header">
+    <div class="msger-header-title">
+      <i class="fas fa-comment-alt"></i> LIFO Chat Bot
+    </div>
+    <div class="msger-header-options">
+      <span><i class="fas fa-cog"></i></span>
+    </div>
+  </header>
+
+  <main class="msger-chat">
+
+  
+
+    <!-- <div 
+    class="msg left-msg"
+    
+   
+ *ngFor="let msg of messages_bot"
+    >
+
+    <div
+    class="test"
+    *ngIf = "true"
+    
+    >
+
+      <div
+       class="msg-img"
+       style="background-image: url(https://image.flaticon.com/icons/svg/327/327779.svg)"
+      ></div>
+
+      <div class="msg-bubble-left">
+        <div class="msg-info">
+          <div class="msg-info-name">BOT</div>
+          <div class="msg-info-time">12:45</div>
+        </div>
+
+        <div class="msg-text">
+        {{msg.text}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    <div class="msg right-msg"
+    
+    *ngFor="let msg of messages_user"
+
+    >
+
+      <div class="msg-img" style="background-image: url(https://cdn-icons-png.flaticon.com/512/1869/1869679.png)">
+      </div>
+
+      <div class="msg-bubble-right">
+        <div class="msg-info">
+          <div class="msg-info-name">Ahmed</div>
+          <div class="msg-info-time">12:14</div>
+        </div>
+
+        <div class="msg-text">{{msg.text}}</div>
+      </div>
+    </div> -->
+
+
+
+
+    <div 
+    
+    *ngFor="let msg of messages"
+   
+    class="msg {{msg.position}}-msg"
+
+    >
+
+      <div class="msg-img" 
+      style=" background-image: url({{msg.bg}})">
+      </div>
+
+      <div class="msg-bubble-{{msg.position}}">
+        <div class="msg-info">
+          <div class="msg-info-name">{{msg.sender}}</div>
+          <div class="msg-info-time">2:42</div>
+        </div>
+
+        <div class="msg-text">{{msg.text}}</div>
+      </div>
+    </div>
+
+
+
+
+  </main>
+
+  <div class="msger-inputarea">
+    <input type="text" class="msger-input" #chat name="user_input" placeholder="Enter your message...">
+    <button (click)="add_message_user(chat.value)"  class="msger-send-btn">Send</button>
+  </div>
+</div>
+
+</div>
